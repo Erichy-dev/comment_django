@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        {% load static %}
+        <link rel="stylesheet" type="text/css" href="{% static 'commentapp/index.css' %}" />
+        <title>django_Commentapp</title>
+    </head>
+    <body>
+	    <div id=commentHome>
+            <h1>Hello from Django</h1>
+            <div class=comments>
+                <div id="comment_body">
+                </div>
+                {% if comment_list %}
+                    <ul>
+                    {% for comment in comment_list %}
+                        <li>{{ comment }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>
+
